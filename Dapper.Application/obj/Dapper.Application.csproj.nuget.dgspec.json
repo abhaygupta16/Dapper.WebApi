@@ -1,0 +1,120 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Application\\Dapper.Application.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Application\\Dapper.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Application\\Dapper.Application.csproj",
+        "projectName": "Dapper.Application",
+        "projectPath": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Application\\Dapper.Application.csproj",
+        "packagesPath": "C:\\Users\\APAWANGU\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\APAWANGU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Core\\Dapper.Core.csproj": {
+                "projectPath": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Core\\Dapper.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Core\\Dapper.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Core\\Dapper.Core.csproj",
+        "projectName": "Dapper.Core",
+        "projectPath": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Core\\Dapper.Core.csproj",
+        "packagesPath": "C:\\Users\\APAWANGU\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\APAWANGU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
