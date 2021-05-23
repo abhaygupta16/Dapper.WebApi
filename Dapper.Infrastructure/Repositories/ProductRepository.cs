@@ -10,13 +10,12 @@ using System.Threading.Tasks;
 
 namespace Dapper.Infrastructure.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : DBFactoryBase,IProductRepository
     {
-        private readonly IConfiguration _configuration;
-
-        public ProductRepository(IConfiguration configuration)
+    
+        public ProductRepository(IConfiguration configuration):base(configuration)
         {
-            _configuration = configuration;
+           
         }
 
 
@@ -25,35 +24,28 @@ namespace Dapper.Infrastructure.Repositories
             product.AddedOn = DateTime.Now;
             var sql= "Insert into Products (Name,Description,Barcode,Rate,AddedOn) VALUES (@Name,@Description,@Barcode,@Rate,@AddedOn)";
 
-            using (var connection=new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                connection.Open();
-                var result = await connection.ExecuteAsync(sql, product);
-                return result;
-            }
+            return await DbQuerySingleAsync<int>(sql, product);
+           
         }
+        
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            var sql = "DELETE FROM Products WHERE Id = @Id";
-
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                connection.Open();
-                var result = await connection.ExecuteAsync(sql, new { Id=id});
-                return result;
-            }
+            var sql = $@"IF EXISTS (SELECT 1 FROM Products WHERE ID = @ID)
+                                        DELETE Products WHERE ID = @ID";
+             return await DbExecuteAsync<bool>(sql, new { id});
+ 
         }
 
-        public async Task<IReadOnlyList<Product>> GetAllAsync()
+        public async Task<bool> ExistAsync(int id)
+        {
+            return await DbExecuteScalarAsync("SELECT COUNT(1) FROM Products WHERE ID = @ID", new { id });
+        }
+
+        public async Task<IEnumerable<Product>> GetAllAsync()
         {
             var sql = "SELECT * FROM Products";
-            using ( var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                connection.Open();
-                var result = await connection.QueryAsync<Product>(sql);
-                return result.ToList();
-            }
+            return await DbQueryAsync<Product>(sql);
 
         }
 
@@ -61,24 +53,19 @@ namespace Dapper.Infrastructure.Repositories
         public async Task<Product> GetByIdAsync(int id)
         {
             var sql = "SELECT * FROM Products WHERE Id = @Id";
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                connection.Open();
-                var result = await connection.QuerySingleOrDefaultAsync<Product>(sql, new { Id = id });
-                return result;
-            }
+
+            return await DbQuerySingleAsync<Product>(sql,new { id});
         }
 
-        public async Task<int> UpdateAsync(Product product)
+        public async Task<bool> UpdateAsync(Product product)
         {
             product.ModifiedOn = DateTime.Now;
-            var sql = "UPDATE Products SET Name = @Name, Description = @Description, Barcode = @Barcode, Rate = @Rate, ModifiedOn = @ModifiedOn  WHERE Id = @Id";
-            using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                connection.Open();
-                var result = await connection.ExecuteAsync(sql, product);
-                return result;
-            }
+
+            string sqlQuery = $@"IF EXISTS (SELECT 1 FROM Products WHERE ID = @ID) 
+                                            UPDATE Products SET Name = @Name, Description = @Description, Barcode = @Barcode, Rate = @Rate, ModifiedOn = @ModifiedOn
+                                            WHERE ID = @ID";
+
+            return await DbExecuteAsync<bool>(sqlQuery, product);
         }
     }
 }

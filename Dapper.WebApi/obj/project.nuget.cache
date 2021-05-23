@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3xI3dWW/dyzu4QCpIs9jbGBKDnLQv9MXKyUpY+2u87psuLAVj8omSvj+BbRWwMu6WwlFHkiIWMn4DOrdTEHPCw==",
+  "dgSpecHash": "DnASuFlZ2c6bboK69J7gpwB2LnB9rotpIFsszPuRUJFRToxN1AhhzVUqNq5xLOBGGNRSP6LSaewGJ0/1niD7aQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.WebApi\\Dapper.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\APAWANGU\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\APAWANGU\\.nuget\\packages\\dapper.strongname\\2.0.90\\dapper.strongname.2.0.90.nupkg.sha512",
     "C:\\Users\\APAWANGU\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\APAWANGU\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

@@ -47,7 +47,7 @@ namespace Dapper.WebApi.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var data = await _uow.Products.DeleteAsync(id);
@@ -55,11 +55,12 @@ namespace Dapper.WebApi.Controllers
         }
 
 
-        [HttpPut()]
-        public async Task<IActionResult> Update(Product product)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id,Product product)
         {
-            var data = await _uow.Products.UpdateAsync(product);
-            return Ok(data);
+                product.Id = id;
+                var data = await _uow.Products.UpdateAsync(product);
+                return Ok(data);
         }
 
 

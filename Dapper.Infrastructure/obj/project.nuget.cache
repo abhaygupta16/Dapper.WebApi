@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kWFn7xjVtCajVYP3+o/wFzMv5cmztuTSQtkZ/mCp6cWjpIHxe+ID/kHjWun2f4HbGUGHovHQumLy3e6ZyzWl8A==",
+  "dgSpecHash": "sDOG4H4baij2R+3Ghr8FJeRUSCE9IhZcJNlE49jm3qr08oVkaItd9zDrIfO31Ovesq09rhDwmpVGVxqCUZQvEg==",
   "success": true,
   "projectFilePath": "C:\\Users\\APAWANGU\\Desktop\\Dapper poc api\\Dapper.Infrastructure\\Dapper.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\APAWANGU\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\APAWANGU\\.nuget\\packages\\dapper.strongname\\2.0.90\\dapper.strongname.2.0.90.nupkg.sha512",
     "C:\\Users\\APAWANGU\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\APAWANGU\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
